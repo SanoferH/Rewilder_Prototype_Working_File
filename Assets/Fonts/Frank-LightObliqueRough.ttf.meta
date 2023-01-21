@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: f247328ed6d3d7d4691f81e0ad3369a7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Frank
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c09e45c36e232d841af297055658f013, type: 3}
+  - {fileID: 12800000, guid: 81169a2c367ee674ead4dbedbfe81ae9, type: 3}
+  - {fileID: 12800000, guid: 027c2d64bc2fc614ab9a90bd9f78726e, type: 3}
+  - {fileID: 12800000, guid: 2234b5a5e18612941a72bb971faf64df, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
