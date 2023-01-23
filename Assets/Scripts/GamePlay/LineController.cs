@@ -21,7 +21,7 @@ public class LineController : MonoBehaviour
 
     public void RemovePoint(Transform point)
     {
-        Debug.Log("Removing: "+point.position);
+//        Debug.Log("Removing: "+point.position);
         points.Remove(point);
         lr.positionCount--;
     }

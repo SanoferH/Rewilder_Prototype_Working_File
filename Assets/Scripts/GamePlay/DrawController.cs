@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DrawController : MonoBehaviour
@@ -20,6 +21,10 @@ public class DrawController : MonoBehaviour
     private Transform next_dotPosition;
     public bool drawingStarted;
     private int dotNumber;
+
+    private string origin_element;
+
+    private string next_element;
     
     //Tutorial Level1
    
@@ -48,12 +53,21 @@ public class DrawController : MonoBehaviour
         //
     }
 
-    public void StartDrawing(Transform dotPoint)            //Start drawing line from dotPosition
+    public void StartDrawing(Transform dotPoint,string _element)            //Start drawing line from dotPosition
     {
         dotPosition = dotPoint;
+        origin_element = _element;
         currentLine = Instantiate(linePrefab, Vector3.zero, Quaternion.identity, lineParent).GetComponent<LineController>();
         dot = Instantiate(dotPrefab, dotPosition.position, Quaternion.identity, dotParent);
         dot.name = "Origin Dot";
+        //Determine the origin Button element
+
+        if (dotPosition.GetComponentInParent<FlowerIdentifier>())
+        {
+            Debug.Log("Starting with a Flower");
+        }
+        
+        //
         currentLine.AddPoint(dot.transform);
         currentDot = Instantiate(dotPrefab, dotPosition.position, Quaternion.identity, dotParent);
         currentDot.name = "Current Dot";
@@ -61,13 +75,30 @@ public class DrawController : MonoBehaviour
         drawingStarted = true;
     }
     
-    public bool StartConnecting(Transform dotPoint)         //connect the line with next_dotPosition
+    public bool StartConnecting(Transform dotPoint, string _element)         //connect the line with next_dotPosition
     {
-        Debug.Log("StartConnecting,,");
+      //  Debug.Log("StartConnecting,,");
         next_dotPosition = dotPoint;
+        next_element = _element;
+       // Debug.Log("origin_element "+origin_element);
+       // Debug.Log("next_element "+next_element);
+        if (next_element != origin_element)
+        {
+            return false;
+        }
         next_dot = Instantiate(dotPrefab, next_dotPosition.position, Quaternion.identity, dotParent);
         dotNumber++;
         next_dot.name = "Dot " + dotNumber;
+        
+        //Determine the next Button element
+
+        if (next_dot.GetComponentInParent<FlowerIdentifier>())
+        {
+            Debug.Log("Continuing with a Flower");
+        }
+        
+        //
+        
         currentLine.AddPoint(next_dot.transform);
         currentLine.RemovePoint(currentDot.transform);
         Destroy(currentDot);
