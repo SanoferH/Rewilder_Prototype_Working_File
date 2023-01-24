@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class LineController : MonoBehaviour
@@ -24,6 +25,19 @@ public class LineController : MonoBehaviour
 //        Debug.Log("Removing: "+point.position);
         points.Remove(point);
         lr.positionCount--;
+    }
+
+    public void RefreshGrid()
+    {
+        points.Clear();
+        lr.positionCount = 0;
+    }
+
+    [Button]
+    public void testClear()
+    {
+        Debug.Log("Clearing..");
+        points.Clear();
     }
     
     private void LateUpdate()

@@ -10,14 +10,15 @@ public class ButtonBehaviour : MonoBehaviour
     [SerializeField] private Transform dotPointPosition;
 
     public string element;
-    private bool isOrigin;
+    public bool isOrigin;
 
-    private bool connected;
+    public bool connected;
 
     private void Awake()
     {
         isOrigin = false;
         connected = false;
+        drawController = GameObject.Find("Line Drawing Canvas").GetComponent<DrawController>();
     }
 
     private void Start()

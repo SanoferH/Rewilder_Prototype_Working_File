@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DrawController : MonoBehaviour
 {
@@ -29,6 +30,9 @@ public class DrawController : MonoBehaviour
     //Tutorial Level1
    
     private bool _levelCompleted;
+    private bool _level2Completed;
+    public bool refreshGrid;
+    
     [Header("Level 1 Tutorial")]
     [SerializeField] private CanvasGroup flowerCanvasGroup;
 
@@ -46,6 +50,7 @@ public class DrawController : MonoBehaviour
     {
         drawingStarted = false;
         dotNumber = 0;
+        refreshGrid = false;
         //Tutorial Level1
         _levelCompleted = false;
         message2Box.alpha = 0;
@@ -128,10 +133,36 @@ public class DrawController : MonoBehaviour
                 currentLine.RemovePoint(currentDot.transform);
                 Destroy(currentDot);
                 drawingStarted = false;
-                if (_levelCompleted)
+                if (SceneManager.GetActiveScene().name == "Tutorial Level 1")
                 {
-                    Level1Completed();
+                    if (_levelCompleted)
+                    {
+                        Level1Completed();
+                    }
                 }
+
+                if (SceneManager.GetActiveScene().name == "Tutorial Level 2")
+                {
+                    if (_level2Completed)
+                    {
+                        
+                    }
+                    else
+                    {
+                        Debug.Log("Delete these and instantiate new and start connecting more");
+                        if (currentLine.points.Count >= 2)
+                        {
+                            currentLine.RefreshGrid();
+                            foreach (Transform child in dotParent)
+                            {
+                                Destroy(child.gameObject);
+                            }
+                        }
+                        refreshGrid = true;
+                    }
+                    
+                }
+               
             }
         }
     }
