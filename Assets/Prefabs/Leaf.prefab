@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1139799790799644897}
   m_Layer: 5
   m_Name: Leaf
-  m_TagString: Untagged
+  m_TagString: Elements
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,6 +142,8 @@ MonoBehaviour:
   element: 
   isOrigin: 0
   connected: 0
+  isReadytoRemove: 0
+  canDelete: 0
 --- !u!114 &1139799790799644922
 MonoBehaviour:
   m_ObjectHideFlags: 0

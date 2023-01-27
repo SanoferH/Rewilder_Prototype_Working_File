@@ -32,6 +32,9 @@ public class DrawController : MonoBehaviour
     private bool _levelCompleted;
     private bool _level2Completed;
     public bool refreshGrid;
+    public bool drawController_IsFilled;
+
+    private bool connectedNextPoint;
     
     [Header("Level 1 Tutorial")]
     [SerializeField] private CanvasGroup flowerCanvasGroup;
@@ -51,6 +54,7 @@ public class DrawController : MonoBehaviour
         drawingStarted = false;
         dotNumber = 0;
         refreshGrid = false;
+        connectedNextPoint = false;
         //Tutorial Level1
         _levelCompleted = false;
         message2Box.alpha = 0;
@@ -63,8 +67,10 @@ public class DrawController : MonoBehaviour
         dotPosition = dotPoint;
         origin_element = _element;
         currentLine = Instantiate(linePrefab, Vector3.zero, Quaternion.identity, lineParent).GetComponent<LineController>();
+        currentLine.tag = "ToRemove";
         dot = Instantiate(dotPrefab, dotPosition.position, Quaternion.identity, dotParent);
         dot.name = "Origin Dot";
+        dot.tag = "ToRemove";
         //Determine the origin Button element
 
         if (dotPosition.GetComponentInParent<FlowerIdentifier>())
@@ -76,6 +82,7 @@ public class DrawController : MonoBehaviour
         currentLine.AddPoint(dot.transform);
         currentDot = Instantiate(dotPrefab, dotPosition.position, Quaternion.identity, dotParent);
         currentDot.name = "Current Dot";
+        currentDot.tag = "ToRemove";
         currentLine.AddPoint(currentDot.transform);
         drawingStarted = true;
     }
@@ -94,7 +101,7 @@ public class DrawController : MonoBehaviour
         next_dot = Instantiate(dotPrefab, next_dotPosition.position, Quaternion.identity, dotParent);
         dotNumber++;
         next_dot.name = "Dot " + dotNumber;
-        
+        next_dot.tag = "ToRemove";
         //Determine the next Button element
 
         if (next_dot.GetComponentInParent<FlowerIdentifier>())
@@ -110,7 +117,7 @@ public class DrawController : MonoBehaviour
         currentDot = Instantiate(dotPrefab, dotPosition.position, Quaternion.identity, dotParent);
         currentDot.name = "Current Dot";
         currentLine.AddPoint(currentDot.transform);
-        
+        connectedNextPoint = true;
         //Below code lines are just for Tutorial Level 1
         _levelCompleted = true;
         
@@ -131,8 +138,19 @@ public class DrawController : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 currentLine.RemovePoint(currentDot.transform);
+                
                 Destroy(currentDot);
                 drawingStarted = false;
+                if (!connectedNextPoint)
+                {
+                    Destroy(dot);                   //removes the origin dot if not connected to next point
+                  Debug.Log("Destroyed the origin");
+                    
+                    // currentLine.RefreshGrid();
+                   // Destroy(currentLine);
+                    // connectedNextPoint = false;
+                }
+
                 if (SceneManager.GetActiveScene().name == "Tutorial Level 1")
                 {
                     if (_levelCompleted)
@@ -150,15 +168,35 @@ public class DrawController : MonoBehaviour
                     else
                     {
                         Debug.Log("Delete these and instantiate new and start connecting more");
+
+                        //Removing the finished Game Elements
+                        GameObject[] _elementsToRemove = GameObject.FindGameObjectsWithTag("ToRemove");
+
+                        foreach (GameObject _elements in _elementsToRemove)
+                        {
+                            Destroy(_elements.gameObject);
+                        }
+
+                        drawController_IsFilled = false;
+                        //Instantiating the new Game Elements
+
+
+                        // Destroy(currentLine);
+
+                        /*
                         if (currentLine.points.Count >= 2)
                         {
+                            
                             currentLine.RefreshGrid();
+                            refreshGrid = true;
                             foreach (Transform child in dotParent)
                             {
                                 Destroy(child.gameObject);
                             }
                         }
-                        refreshGrid = true;
+                        */
+
+                        // refreshGrid = true;
                     }
                     
                 }

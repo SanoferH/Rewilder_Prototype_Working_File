@@ -14,10 +14,16 @@ public class ButtonBehaviour : MonoBehaviour
 
     public bool connected;
 
+    public bool isReadytoRemove;
+
+    public bool canDelete;
+
     private void Awake()
     {
         isOrigin = false;
         connected = false;
+        isReadytoRemove = false;
+        canDelete = false;
         drawController = GameObject.Find("Line Drawing Canvas").GetComponent<DrawController>();
     }
 
@@ -41,6 +47,8 @@ public class ButtonBehaviour : MonoBehaviour
     {
         isOrigin = true;                                        //make current button as origin
         drawController.StartDrawing(dotPointPosition,element);
+        //isReadytoRemove = true;
+        gameObject.tag = "IsOrigin";
     }
 
     public void ConnectLine()
@@ -50,10 +58,21 @@ public class ButtonBehaviour : MonoBehaviour
         {
             if (!isOrigin)                                     // to make sure connecting line is not the drawing start point
             {
-                if (!connected)                                // to avoid the instantiation of multiple dots and lines
+                if (!connected)                                // if not connected already and to avoid the instantiation of multiple dots and lines
                 {
+                    //isReadytoRemove = true;
                     connected = drawController.StartConnecting(dotPointPosition,element);
-                    Debug.Log("connect_element "+element);
+                    if (connected)
+                    {
+                        gameObject.tag = "ToRemove";
+                        GameObject _origin = GameObject.FindGameObjectWithTag("IsOrigin");
+                        Debug.Log("Before: "+_origin.tag);
+                        _origin.gameObject.tag = "ToRemove";
+                        Debug.Log("After: "+_origin.tag);
+                        Debug.Log("connect_element "+element);
+                    }
+                    
+                    
                 }
             }
         }
@@ -61,9 +80,24 @@ public class ButtonBehaviour : MonoBehaviour
     
     private void Update()
     {
+        if (gameObject.CompareTag("IsOrigin"))
+        {
+            Debug.Log("Need to check connection happeing or not");
+            if (!drawController.drawingStarted)
+            {
+                this.gameObject.tag = "Elements";
+            }
+        }
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             
         }
+/*
+        if (canDelete)
+        {
+            Destroy(this.gameObject);
+        }
+        */
     }
 }
