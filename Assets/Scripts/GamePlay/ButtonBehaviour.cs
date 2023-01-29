@@ -9,6 +9,8 @@ public class ButtonBehaviour : MonoBehaviour
     [SerializeField] private DrawController drawController;
     [SerializeField] private Transform dotPointPosition;
 
+    public List<GameObject> neighbours;
+
     public string element;
     public bool isOrigin;
 
@@ -29,6 +31,12 @@ public class ButtonBehaviour : MonoBehaviour
 
     private void Start()
     {
+        neighbours = new List<GameObject>();
+       // GetComponentInParent<NeighbourElemnts>().Neighbours
+       foreach (GameObject elements in GetComponentInParent<NeighbourElemnts>().Neighbours)
+       {
+           neighbours.Add(elements);
+       }
         if (gameObject.GetComponent<FlowerIdentifier>())
         {
             element = "Flower";
@@ -53,36 +61,97 @@ public class ButtonBehaviour : MonoBehaviour
 
     public void ConnectLine()
     {
-        
         if (drawController.drawingStarted)                     // check and execute further only if the drawing has been already started
         {
             if (!isOrigin)                                     // to make sure connecting line is not the drawing start point
             {
                 if (!connected)                                // if not connected already and to avoid the instantiation of multiple dots and lines
                 {
+                    if (GameObject.FindGameObjectWithTag("IsOrigin") != null)
+                    {
+                        GameObject lastConnectedElement = GameObject.FindGameObjectWithTag("IsOrigin");
+                        
+                        if (gameObject.GetComponentInParent<NeighbourElemnts>().Neighbours
+                            .Contains(lastConnectedElement.transform.parent.gameObject))
+                        {
+                            connected = drawController.StartConnecting(dotPointPosition,element);
+                            if (connected)
+                            {
+                                gameObject.tag = "LastConnected";
+                                if (GameObject.FindGameObjectWithTag("IsOrigin") != null)
+                                {
+                                    GameObject _origin = GameObject.FindGameObjectWithTag("IsOrigin");
+                                   // _origin.gameObject.tag = "ToRemove";
+                                   _origin.gameObject.tag = "ToRemove";
+                                }
+                            }
+                        }
+                        
+                    }
+                    
+                    if (GameObject.FindGameObjectWithTag("LastConnected") != null)
+                    {
+                        GameObject lastConnectedElement = GameObject.FindGameObjectWithTag("LastConnected");
+                        if (gameObject.GetComponentInParent<NeighbourElemnts>().Neighbours
+                            .Contains(lastConnectedElement.transform.parent.gameObject))
+                        {
+                            connected = drawController.StartConnecting(dotPointPosition,element);
+                            if (connected)
+                            {
+                                gameObject.tag = "LastConnected";
+                                lastConnectedElement.tag = "ToRemove";
+                            }
+                        }
+                    }
+                   
+                    
+                    
+                }
+            }
+        }
+        
+        /*
+        if (drawController.drawingStarted)                     // check and execute further only if the drawing has been already started
+        {
+            if (!isOrigin)                                     // to make sure connecting line is not the drawing start point
+            {
+                if (!connected && CheckIsNeighbour())                                // if not connected already and to avoid the instantiation of multiple dots and lines
+                {
                     //isReadytoRemove = true;
                     connected = drawController.StartConnecting(dotPointPosition,element);
                     if (connected)
                     {
                         gameObject.tag = "ToRemove";
-                        GameObject _origin = GameObject.FindGameObjectWithTag("IsOrigin");
-                        Debug.Log("Before: "+_origin.tag);
-                        _origin.gameObject.tag = "ToRemove";
-                        Debug.Log("After: "+_origin.tag);
-                        Debug.Log("connect_element "+element);
+                        if (GameObject.FindGameObjectWithTag("IsOrigin") != null)
+                        {
+                            GameObject _origin = GameObject.FindGameObjectWithTag("IsOrigin");
+                            _origin.gameObject.tag = "ToRemove";
+                        }
+                        
+//                        Debug.Log("Before: "+_origin.tag);
+                       
+                       // Debug.Log("After: "+_origin.tag);
+                       // Debug.Log("connect_element "+element);
                     }
                     
                     
                 }
             }
         }
+        */
+    }
+
+    private bool CheckIsNeighbour()
+    {
+        Debug.Log("Element Name :");
+        return true;
     }
     
     private void Update()
     {
         if (gameObject.CompareTag("IsOrigin"))
         {
-            Debug.Log("Need to check connection happeing or not");
+          //  Debug.Log("Need to check connection happeing or not");
             if (!drawController.drawingStarted)
             {
                 this.gameObject.tag = "Elements";

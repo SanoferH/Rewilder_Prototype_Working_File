@@ -22,7 +22,7 @@ public class NeighbourElemnts : MonoBehaviour
     {
        // dot = Instantiate(dotPrefab, dotPosition.position, Quaternion.identity, dotParent);
         currentElement = Instantiate(nativeElement,gameObject.transform.position, Quaternion.identity, this.transform);
-        isFilled = false;
+       isFilled = false;
     }
 
     [Button]
@@ -36,20 +36,17 @@ public class NeighbourElemnts : MonoBehaviour
     {
         
         
-            Debug.Log("Its empty here in the space..: "+gameObject.name);
+//            Debug.Log("Its empty here in the space..: "+gameObject.name);
             foreach (GameObject _neighbour in Neighbours)
             {
                    
                
                 if (_neighbour.gameObject.transform.childCount == 1)                               // will consider the nieghbours that are not empty 'child count = 1'
                 {
-                    Debug.Log("Nieghbour Name: "+_neighbour.gameObject.name);
-                    Debug.Log("Nieghbour Child Element :"+_neighbour.transform.GetChild(0));
+//                    Debug.Log("Nieghbour Name: "+_neighbour.gameObject.name);
+ //                   Debug.Log("Nieghbour Child Element :"+_neighbour.transform.GetChild(0));
                     currentNeigbourElements.Add(_neighbour.transform.GetChild(0).gameObject);
-                    
-                   
-                    
-                    
+               
                 }
                     
             }

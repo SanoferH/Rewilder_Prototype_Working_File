@@ -75,7 +75,7 @@ public class DrawController : MonoBehaviour
 
         if (dotPosition.GetComponentInParent<FlowerIdentifier>())
         {
-            Debug.Log("Starting with a Flower");
+          //  Debug.Log("Starting with a Flower");
         }
         
         //
@@ -167,7 +167,7 @@ public class DrawController : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("Delete these and instantiate new and start connecting more");
+//                        Debug.Log("Delete these and instantiate new and start connecting more");
 
                         //Removing the finished Game Elements
                         GameObject[] _elementsToRemove = GameObject.FindGameObjectsWithTag("ToRemove");
@@ -176,6 +176,9 @@ public class DrawController : MonoBehaviour
                         {
                             Destroy(_elements.gameObject);
                         }
+
+                        GameObject lastConnectedElement = GameObject.FindGameObjectWithTag("LastConnected");
+                        Destroy(lastConnectedElement.gameObject);
 
                         drawController_IsFilled = false;
                         //Instantiating the new Game Elements
@@ -214,7 +217,7 @@ public class DrawController : MonoBehaviour
 
     private void Level1Completed()
     {
-        Debug.Log("Level1 Completed");
+      //  Debug.Log("Level1 Completed");
         flowerCanvasGroup.LeanAlpha(0, 1.0f).setEaseOutQuart();
         message1Box.LeanAlpha(0, 1.0f).setEaseOutQuart();
         messge2BoxGameObject.SetActive(true);

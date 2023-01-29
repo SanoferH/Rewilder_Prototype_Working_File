@@ -139,6 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drawController: {fileID: 0}
   dotPointPosition: {fileID: 293157074966332909}
+  neighbours: []
   element: 
   isOrigin: 0
   connected: 0
