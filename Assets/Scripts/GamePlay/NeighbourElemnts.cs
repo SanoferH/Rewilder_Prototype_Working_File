@@ -43,7 +43,7 @@ public class NeighbourElemnts : MonoBehaviour
                
                 if (_neighbour.gameObject.transform.childCount == 1)                               // will consider the nieghbours that are not empty 'child count = 1'
                 {
-//                    Debug.Log("Nieghbour Name: "+_neighbour.gameObject.name);
+                    Debug.Log("Nieghbour Name: "+_neighbour.gameObject.name);
  //                   Debug.Log("Nieghbour Child Element :"+_neighbour.transform.GetChild(0));
                     currentNeigbourElements.Add(_neighbour.transform.GetChild(0).gameObject);
                
@@ -52,8 +52,11 @@ public class NeighbourElemnts : MonoBehaviour
             }
 
             isFilled = true;
-            
             //if number of currentNeigbourElements is just 1, then select that element to instantiate as currentElement
+            
+           
+            
+           
 /*
             if (currentNeigbourElements.Count == 1)
             {
@@ -110,29 +113,40 @@ public class NeighbourElemnts : MonoBehaviour
             }
           */   
 
+/*Working Properly
+
         if (currentNeigbourElements.Count == 1)
         {
-            currentElement = Instantiate(Grass,gameObject.transform.position, Quaternion.identity, this.transform);
+            currentElement = Instantiate(PickRandomElement(),gameObject.transform.position, Quaternion.identity, this.transform);
             currentNeigbourElements.Clear();
         }
 
         if (currentNeigbourElements.Count == 2)
         {
-            currentElement = Instantiate(Leaf,gameObject.transform.position, Quaternion.identity, this.transform);
+          //  currentElement = Instantiate(Leaf,gameObject.transform.position, Quaternion.identity, this.transform);
+            currentElement = Instantiate(PickRandomElement(),gameObject.transform.position, Quaternion.identity, this.transform);
             currentNeigbourElements.Clear();
         }
         if (currentNeigbourElements.Count == 3)
         {
-            currentElement = Instantiate(Flower,gameObject.transform.position, Quaternion.identity, this.transform);
+           // currentElement = Instantiate(Flower,gameObject.transform.position, Quaternion.identity, this.transform);
+           currentElement = Instantiate(PickRandomElement(),gameObject.transform.position, Quaternion.identity, this.transform);
             currentNeigbourElements.Clear();
         }
         
         if (currentNeigbourElements.Count == 4)
         {
-            currentElement = Instantiate(Flower,gameObject.transform.position, Quaternion.identity, this.transform);
+           // currentElement = Instantiate(Grass,gameObject.transform.position, Quaternion.identity, this.transform);
+           currentElement = Instantiate(PickRandomElement(),gameObject.transform.position, Quaternion.identity, this.transform);
             currentNeigbourElements.Clear();
         }
-      
+        */
+
+        if (currentNeigbourElements.Count >= 1)
+        {
+            currentElement = Instantiate(PickRandomElement(),gameObject.transform.position, Quaternion.identity, this.transform);
+            currentNeigbourElements.Clear();
+        }
     }
 
     private GameObject PickRandomElement()
