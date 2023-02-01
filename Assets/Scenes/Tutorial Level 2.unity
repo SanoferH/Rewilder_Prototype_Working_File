@@ -365,6 +365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawController: {fileID: 348911533}
+  UIMetaball: {fileID: 6030878324488171436, guid: 08d7969573102f140ab7bd486becd9d4, type: 3}
+  MetaballParent: {fileID: 1030878695}
   nativeElement: {fileID: 293157074867996984, guid: 58bafa0163792c540ac1e6acf2ee3e25, type: 3}
   Flower: {fileID: 293157074867996984, guid: 58bafa0163792c540ac1e6acf2ee3e25, type: 3}
   Leaf: {fileID: 1139799790799644920, guid: e3ea4bf8bb9e3ff40b92ccdf1a2196ea, type: 3}
@@ -426,6 +428,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawController: {fileID: 348911533}
+  UIMetaball: {fileID: 0}
+  MetaballParent: {fileID: 0}
   nativeElement: {fileID: 1931043235847753396, guid: 120ca3dd89da8e9419baaeb84657852b, type: 3}
   Flower: {fileID: 293157074867996984, guid: 58bafa0163792c540ac1e6acf2ee3e25, type: 3}
   Leaf: {fileID: 1139799790799644920, guid: e3ea4bf8bb9e3ff40b92ccdf1a2196ea, type: 3}
@@ -1034,6 +1038,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &429411596
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UIMetaballs/MetaballRendering
+  m_Shader: {fileID: 4800000, guid: 8aa48b9652016d242895ced5f683e8c6, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &452571897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,6 +1112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawController: {fileID: 348911533}
+  UIMetaball: {fileID: 6030878324488171436, guid: 08d7969573102f140ab7bd486becd9d4, type: 3}
+  MetaballParent: {fileID: 1030878695}
   nativeElement: {fileID: 1139799790799644920, guid: e3ea4bf8bb9e3ff40b92ccdf1a2196ea, type: 3}
   Flower: {fileID: 293157074867996984, guid: 58bafa0163792c540ac1e6acf2ee3e25, type: 3}
   Leaf: {fileID: 1139799790799644920, guid: e3ea4bf8bb9e3ff40b92ccdf1a2196ea, type: 3}
@@ -1172,58 +1202,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452841465}
   m_CullTransparentMesh: 1
---- !u!86 &470519779
-CustomRenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1080
-  m_Height: 2160
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
-  m_Material: {fileID: 1439234104}
-  m_InitSource: 1
-  m_InitMaterial: {fileID: 1439234104}
-  m_InitColor: {r: 1, g: 1, b: 1, a: 1}
-  m_InitTexture: {fileID: 0}
-  m_UpdateMode: 0
-  m_InitializationMode: 1
-  m_UpdateZoneSpace: 0
-  m_CurrentUpdateZoneSpace: 0
-  m_UpdateZones: []
-  m_UpdatePeriod: 0
-  m_ShaderPass: 0
-  m_CubemapFaceMask: 4294967295
-  m_DoubleBuffered: 0
-  m_WrapUpdateZones: 0
 --- !u!1 &498454674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,6 +1252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawController: {fileID: 348911533}
+  UIMetaball: {fileID: 6030878324488171436, guid: 08d7969573102f140ab7bd486becd9d4, type: 3}
+  MetaballParent: {fileID: 1030878695}
   nativeElement: {fileID: 1139799790799644920, guid: e3ea4bf8bb9e3ff40b92ccdf1a2196ea, type: 3}
   Flower: {fileID: 293157074867996984, guid: 58bafa0163792c540ac1e6acf2ee3e25, type: 3}
   Leaf: {fileID: 1139799790799644920, guid: e3ea4bf8bb9e3ff40b92ccdf1a2196ea, type: 3}
@@ -1699,6 +1679,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawController: {fileID: 348911533}
+  UIMetaball: {fileID: 0}
+  MetaballParent: {fileID: 0}
   nativeElement: {fileID: 1931043235847753396, guid: 120ca3dd89da8e9419baaeb84657852b, type: 3}
   Flower: {fileID: 293157074867996984, guid: 58bafa0163792c540ac1e6acf2ee3e25, type: 3}
   Leaf: {fileID: 1139799790799644920, guid: e3ea4bf8bb9e3ff40b92ccdf1a2196ea, type: 3}
@@ -2343,6 +2325,58 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!86 &961921578
+CustomRenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 1080
+  m_Height: 2160
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
+  m_Material: {fileID: 429411596}
+  m_InitSource: 1
+  m_InitMaterial: {fileID: 429411596}
+  m_InitColor: {r: 1, g: 1, b: 1, a: 1}
+  m_InitTexture: {fileID: 0}
+  m_UpdateMode: 0
+  m_InitializationMode: 1
+  m_UpdateZoneSpace: 0
+  m_CurrentUpdateZoneSpace: 0
+  m_UpdateZones: []
+  m_UpdatePeriod: 0
+  m_ShaderPass: 0
+  m_CubemapFaceMask: 4294967295
+  m_DoubleBuffered: 0
+  m_WrapUpdateZones: 0
 --- !u!1 &1000369155
 GameObject:
   m_ObjectHideFlags: 0
@@ -2384,13 +2418,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1014569130}
   - component: {fileID: 1014569131}
-  m_Layer: 5
-  m_Name: UI Metaball (2)
+  m_Layer: 3
+  m_Name: UI Metaball 0 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1014569130
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2404,12 +2438,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1030878695}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -221.9, y: 574.08}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: -220, y: 500}
+  m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1014569131
 MonoBehaviour:
@@ -2426,7 +2460,7 @@ MonoBehaviour:
   _color: {r: 0.009433985, g: 0.009433985, b: 0.009433985, a: 0.18431373}
   _blending: 0.1
   _outlineWidth: 0
-  _roundness: {x: 0, y: 0, z: 0, w: 0}
+  _roundness: {x: 1, y: 1, z: 1, w: 1}
   round: 1
   rectTransform: {fileID: 1014569130}
   parentPanel: {fileID: 1030878696}
@@ -2441,7 +2475,7 @@ GameObject:
   - component: {fileID: 1030878695}
   - component: {fileID: 1030878697}
   - component: {fileID: 1030878696}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Metaball Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2456,14 +2490,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030878694}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1859572428}
-  - {fileID: 2093870163}
+  - {fileID: 3508530439927220235}
   - {fileID: 1014569130}
   - {fileID: 2135266858}
+  - {fileID: 2093870163}
+  - {fileID: 1859572428}
   - {fileID: 1032834583}
   m_Father: {fileID: 1316789103}
   m_RootOrder: 0
@@ -2493,7 +2528,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 470519779}
+  m_Texture: {fileID: 961921578}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2505,12 +2540,12 @@ MonoBehaviour:
   _correctColoring: 1
   _backgroundColor: {r: 0, g: 0, b: 0, a: 0}
   _useOutline: 0
-  _outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  _outlineColor: {r: 1, g: 0, b: 0, a: 1}
   _resolution: {x: 1080, y: 2160}
   _useCanvasSize: 1
   _resolutionDivider: 1
   _resolutionMultiplier: 1
-  _metaballTexture: {fileID: 470519779}
+  _metaballTexture: {fileID: 961921578}
 --- !u!222 &1030878697
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2529,13 +2564,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1032834583}
   - component: {fileID: 1032834584}
-  m_Layer: 5
-  m_Name: UI Metaball (4)
+  m_Layer: 3
+  m_Name: UI Metaball 2 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1032834583
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2549,12 +2584,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1030878695}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -221.9, y: 156.5}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 0, y: 55}
+  m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1032834584
 MonoBehaviour:
@@ -2593,7 +2628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1050664479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2734,6 +2769,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawController: {fileID: 348911533}
+  UIMetaball: {fileID: 6030878324488171436, guid: 08d7969573102f140ab7bd486becd9d4, type: 3}
+  MetaballParent: {fileID: 1030878695}
   nativeElement: {fileID: 1931043235847753396, guid: 120ca3dd89da8e9419baaeb84657852b, type: 3}
   Flower: {fileID: 293157074867996984, guid: 58bafa0163792c540ac1e6acf2ee3e25, type: 3}
   Leaf: {fileID: 1139799790799644920, guid: e3ea4bf8bb9e3ff40b92ccdf1a2196ea, type: 3}
@@ -2892,7 +2929,8 @@ GameObject:
   - component: {fileID: 1316789102}
   - component: {fileID: 1316789101}
   - component: {fileID: 1316789100}
-  m_Layer: 5
+  - component: {fileID: 1316789104}
+  m_Layer: 3
   m_Name: PatchAnimationCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2981,30 +3019,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!21 &1439234104
-Material:
-  serializedVersion: 8
+--- !u!225 &1316789104
+CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UIMetaballs/MetaballRendering
-  m_Shader: {fileID: 4800000, guid: 8aa48b9652016d242895ced5f683e8c6, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Ints: []
-    m_Floats: []
-    m_Colors: []
-  m_BuildTextureStacks: []
+  m_GameObject: {fileID: 1316789099}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1512903824
 GameObject:
   m_ObjectHideFlags: 0
@@ -3055,6 +3081,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawController: {fileID: 348911533}
+  UIMetaball: {fileID: 6030878324488171436, guid: 08d7969573102f140ab7bd486becd9d4, type: 3}
+  MetaballParent: {fileID: 1030878695}
   nativeElement: {fileID: 293157074867996984, guid: 58bafa0163792c540ac1e6acf2ee3e25, type: 3}
   Flower: {fileID: 293157074867996984, guid: 58bafa0163792c540ac1e6acf2ee3e25, type: 3}
   Leaf: {fileID: 1139799790799644920, guid: e3ea4bf8bb9e3ff40b92ccdf1a2196ea, type: 3}
@@ -3250,6 +3278,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawController: {fileID: 348911533}
+  UIMetaball: {fileID: 0}
+  MetaballParent: {fileID: 0}
   nativeElement: {fileID: 293157074867996984, guid: 58bafa0163792c540ac1e6acf2ee3e25, type: 3}
   Flower: {fileID: 293157074867996984, guid: 58bafa0163792c540ac1e6acf2ee3e25, type: 3}
   Leaf: {fileID: 1139799790799644920, guid: e3ea4bf8bb9e3ff40b92ccdf1a2196ea, type: 3}
@@ -3663,13 +3693,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1859572428}
   - component: {fileID: 1859572429}
-  m_Layer: 5
-  m_Name: UI Metaball
+  m_Layer: 3
+  m_Name: UI Metaball 1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1859572428
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3683,12 +3713,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1030878695}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.79, y: 380.5}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 0, y: 255}
+  m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1859572429
 MonoBehaviour:
@@ -3708,7 +3738,7 @@ MonoBehaviour:
   _roundness: {x: 0, y: 0, z: 0, w: 0}
   round: 1
   rectTransform: {fileID: 1859572428}
-  parentPanel: {fileID: 0}
+  parentPanel: {fileID: 1030878696}
 --- !u!1 &1871031048
 GameObject:
   m_ObjectHideFlags: 0
@@ -4029,6 +4059,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawController: {fileID: 348911533}
+  UIMetaball: {fileID: 0}
+  MetaballParent: {fileID: 0}
   nativeElement: {fileID: 1139799790799644920, guid: e3ea4bf8bb9e3ff40b92ccdf1a2196ea, type: 3}
   Flower: {fileID: 293157074867996984, guid: 58bafa0163792c540ac1e6acf2ee3e25, type: 3}
   Leaf: {fileID: 1139799790799644920, guid: e3ea4bf8bb9e3ff40b92ccdf1a2196ea, type: 3}
@@ -4049,13 +4081,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2093870163}
   - component: {fileID: 2093870164}
-  m_Layer: 5
-  m_Name: UI Metaball (1)
+  m_Layer: 3
+  m_Name: UI Metaball 0 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2093870163
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4069,12 +4101,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1030878695}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.79, y: 599.82}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 0, y: 500}
+  m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2093870164
 MonoBehaviour:
@@ -4105,13 +4137,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2135266858}
   - component: {fileID: 2135266859}
-  m_Layer: 5
-  m_Name: UI Metaball (3)
+  m_Layer: 3
+  m_Name: UI Metaball 1 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2135266858
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4125,12 +4157,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1030878695}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -221.9, y: 355.2}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: -220, y: 255}
+  m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2135266859
 MonoBehaviour:
@@ -4254,3 +4286,59 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!224 &3508530439927220235
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5516256893068413741}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1030878695}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -220, y: 500}
+  m_SizeDelta: {x: 10, y: 10}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4004811162043784247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5516256893068413741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 156a8d702f82e99488b1b17cd9644292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color: {r: 0.009433985, g: 0.009433985, b: 0.009433985, a: 0.18431373}
+  _blending: 0.1
+  _outlineWidth: 0
+  _roundness: {x: 1, y: 1, z: 1, w: 1}
+  round: 1
+  rectTransform: {fileID: 3508530439927220235}
+  parentPanel: {fileID: 1030878696}
+--- !u!1 &5516256893068413741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3508530439927220235}
+  - component: {fileID: 4004811162043784247}
+  m_Layer: 5
+  m_Name: UI MetaballBubbles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0

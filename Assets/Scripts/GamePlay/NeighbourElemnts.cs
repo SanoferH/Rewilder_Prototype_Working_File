@@ -6,6 +6,9 @@ using UnityEngine;
 public class NeighbourElemnts : MonoBehaviour
 {
     [SerializeField] private DrawController drawController;
+    [SerializeField] private GameObject UIMetaball;
+    [SerializeField] private Transform MetaballParent;
+    private GameObject UIMetaballElement;
     public GameObject nativeElement;
     public GameObject Flower;
     public GameObject Leaf;
@@ -23,6 +26,11 @@ public class NeighbourElemnts : MonoBehaviour
        // dot = Instantiate(dotPrefab, dotPosition.position, Quaternion.identity, dotParent);
         currentElement = Instantiate(nativeElement,gameObject.transform.position, Quaternion.identity, this.transform);
        isFilled = false;
+       if (UIMetaball)
+       {
+           UIMetaballElement = Instantiate(UIMetaball, gameObject.transform.position, Quaternion.identity,
+               MetaballParent);
+       }
     }
 
     [Button]
@@ -166,10 +174,30 @@ public class NeighbourElemnts : MonoBehaviour
         {
             isFilled = false;
         }
+        
+        if (currentElement == null)
+        {
+            if (UIMetaballElement != null)
+            {
+                UIMetaballElement.GetComponent<MetaballMovements>().DeletePatch();
+            }
+            if (!isFilled)
+            {
+                FillEmptySpace(); 
+            }
+            
+           
+        } 
+        /*
         if (currentElement == null && !isFilled)
         {
             FillEmptySpace();
-        }  
+            if (UIMetaball)
+            {
+                UIMetaballElement.GetComponent<MetaballMovements>().DeletePatch();
+            }
+        } 
+        */ 
         /*
         if (drawController.refreshGrid)
         {
