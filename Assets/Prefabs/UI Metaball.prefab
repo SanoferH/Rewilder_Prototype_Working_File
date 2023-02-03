@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -220, y: 500}
-  m_SizeDelta: {x: 175, y: 175}
+  m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2931745502993021110
 MonoBehaviour:
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _color: {r: 0.009433985, g: 0.009433985, b: 0.009433985, a: 0.18431373}
-  _blending: 0.1
+  _blending: 0.06
   _outlineWidth: 0
   _roundness: {x: 1, y: 1, z: 1, w: 1}
   round: 1
@@ -70,3 +70,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DiminishTime: 2
+  Bubbles: {fileID: 0}
+  MetaballParent: {fileID: 0}
+  variableSizeRange: 10
+  timeValueRange: 10
+  randomSizeRange: 0
+  timeRange: 0
