@@ -13,7 +13,9 @@ public class DrawController : MonoBehaviour
     [Header("Lines")]
     [SerializeField] private GameObject linePrefab;
     [SerializeField] private Transform lineParent;
-    
+
+    [Header("Metaball")]
+    [SerializeField] private GameObject MetaballPanel;
     private LineController currentLine;
     private GameObject dot;
     private GameObject next_dot;
@@ -205,6 +207,11 @@ public class DrawController : MonoBehaviour
                 }
                
             }
+        }
+
+        if (MetaballPanel.transform.childCount == 0)
+        {
+            MetaballPanel.SetActive(false);
         }
     }
     

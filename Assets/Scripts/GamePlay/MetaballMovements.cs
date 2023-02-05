@@ -40,15 +40,21 @@ public class MetaballMovements : MonoBehaviour
     {
         RectTransform rt = GetComponent<RectTransform>();
         LeanTween.size(rt, new Vector2(-400.0f,-400.0f), DiminishTime).setEaseOutQuint();
-        StartCoroutine(DeletePatchObject());
+        if (this.gameObject.activeSelf)
+        {
+            StartCoroutine(DeletePatchObject()); // to avoid the error by calling an inactive object
+        }
+        
     }
 
     IEnumerator DeletePatchObject()
     {
         yield return new WaitForSeconds(DiminishTime);
-        Destroy(this.gameObject);
+       // Destroy(this.gameObject);
+       this.gameObject.SetActive(false);
     }
 
+    
     [Button]
     public void WaveEffect()
     {
