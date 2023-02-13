@@ -1,0 +1,10 @@
+* properties
+
+_MainTex : The 2D texture to show.
+_StencilComp : The function used to compare the reference value to the current contents of the buffer. 
+_Stencil : The number of the stencil test.
+_StencilOp : The operation when the stencil test succeeded.
+_StencilWriteMask : used when writing to the buffer. Note that, like other write masks, it specifies which bits of stencil buffer will be affected by write
+_StencilReadMask : used when comparing the reference value with the contents of the buffer
+_ColorMask : The color channel without drawing.
+_UseUIAlphaClip : if true (not 0 or negative number), define UNITY_UI_ALPHACLIP.

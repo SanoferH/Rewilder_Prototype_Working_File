@@ -50,7 +50,7 @@ public class MetaballMovements : MonoBehaviour
     IEnumerator DeletePatchObject()
     {
         yield return new WaitForSeconds(DiminishTime);
-       // Destroy(this.gameObject);
+       // Destroy(this.gameObject);  // instead of destroying making this object disable helps to solve the patch glitch 
        this.gameObject.SetActive(false);
     }
 

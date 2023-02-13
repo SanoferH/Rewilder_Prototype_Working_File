@@ -1,0 +1,43 @@
+# This is the local documentation of AEAsAnimation,
+The online documentation is here
+https://www.bbc-fbig-glsui.com/aeasanimation/
+
+
+
+* Introduction
+AEAsAnimation provides the way to convert the AfterEffects animation to the Json data for Unity.
+
+
+
+* Try Demo
+Download and import AEAsAnimation.
+Press OK button when the dependency dialog asks.
+Open AEAsAnimation/Demo/Scenes/SampleScene01, and play it.
+
+
+
+* How to use (basically)
+- export After Effects animation
+1. Open After Effcts and select the composition.
+2. Run the convert script
+convert script is here : AEAsAnimation/AEPlugin/after-effects-as-animation.jsx
+
+- Install animation files
+1. Create the streaming assets direcory in your Unity project.
+2. Move the animation file into the streaming assets direcory.
+3. If animation requires resource files, Move those files into the streaming assets direcory.
+Those resource files must be placed same directory of the animation file placed.
+
+- Show animation on Unity
+Add the following code to your Unity project to play the animation.
+AEAsAnimation.AEasAnimationRoot.Show("path/to/file");
+
+
+
+* the shader documentation is here
+Assets/AEAsAnimation/ColorOverlay.shader properties.txt
+
+
+
+* contuct us : mail to
+terp_suzuki@glsui.com

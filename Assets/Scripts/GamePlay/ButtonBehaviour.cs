@@ -31,6 +31,16 @@ public class ButtonBehaviour : MonoBehaviour
 
     private void Start()
     {
+        if (drawController.drawingStarted)
+        {
+            Debug.Log("Play Appear animation and then play idle animation"); 
+        }
+        else
+        {
+            Debug.Log("Directly play idle animation"); 
+        }
+        GetComponent<UISpriteAnimation>().Func_PlayAppearUIAnim();
+       // Debug.Log("Animation can be played now");
         neighbours = new List<GameObject>();
        // GetComponentInParent<NeighbourElemnts>().Neighbours
        foreach (GameObject elements in GetComponentInParent<NeighbourElemnts>().Neighbours)
@@ -57,6 +67,7 @@ public class ButtonBehaviour : MonoBehaviour
         drawController.StartDrawing(dotPointPosition,element);
         //isReadytoRemove = true;
         gameObject.tag = "IsOrigin";
+     //   GetComponent<UISpriteAnimation>().Func_PlayPressUIAnim();
     }
 
     public void ConnectLine()
@@ -77,6 +88,7 @@ public class ButtonBehaviour : MonoBehaviour
                             connected = drawController.StartConnecting(dotPointPosition,element);
                             if (connected)
                             {
+                               // GetComponent<UISpriteAnimation>().Func_PlayPressUIAnim();
                                 gameObject.tag = "LastConnected";
                                 if (GameObject.FindGameObjectWithTag("IsOrigin") != null)
                                 {

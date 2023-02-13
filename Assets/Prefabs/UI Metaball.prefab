@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -220, y: 500}
-  m_SizeDelta: {x: 220, y: 220}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2931745502993021110
 MonoBehaviour:
@@ -53,8 +53,8 @@ MonoBehaviour:
   _color: {r: 0.009433985, g: 0.009433985, b: 0.009433985, a: 0.18431373}
   _blending: 0.06
   _outlineWidth: 0
-  _roundness: {x: 1, y: 1, z: 1, w: 1}
-  round: 1
+  _roundness: {x: 0.9, y: 0.9, z: 0.9, w: 0.9}
+  round: 0
   rectTransform: {fileID: 3426280887834979466}
   parentPanel: {fileID: 0}
 --- !u!114 &7363129619632575906
