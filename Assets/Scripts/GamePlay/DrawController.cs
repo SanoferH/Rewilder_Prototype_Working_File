@@ -33,6 +33,7 @@ public class DrawController : MonoBehaviour
    
     private bool _levelCompleted;
     private bool _level2Completed;
+    private bool _level1GameCompleted;
     public bool refreshGrid;
     public bool drawController_IsFilled;
 
@@ -204,6 +205,28 @@ public class DrawController : MonoBehaviour
                         // refreshGrid = true;
                     }
                     
+                }
+
+                if (SceneManager.GetActiveScene().name == "Level1Game")
+                {
+                    if (_level1GameCompleted)
+                    {
+                        
+                    }
+                    else
+                    {
+                        GameObject[] _elementsToRemove = GameObject.FindGameObjectsWithTag("ToRemove");
+
+                        foreach (GameObject _elements in _elementsToRemove)
+                        {
+                            Destroy(_elements.gameObject);
+                        }
+
+                        GameObject lastConnectedElement = GameObject.FindGameObjectWithTag("LastConnected");
+                        Destroy(lastConnectedElement.gameObject);
+
+                        drawController_IsFilled = false;
+                    }
                 }
                
             }
